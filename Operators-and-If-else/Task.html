@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Task-1. Check if a user entered a nummber greater than 100 ?
+
+    // let num1 = Number(prompt("Enter The Number:-"));
+
+    // if (num1 > 100) {
+    //   console.log(num1, "is greater than 100");
+    // }
+
+    // Task-2. Check if a year is a leap year (basic)
+
+    // let year = Number(prompt("Enter the year:--"));
+
+    // if (year % 4 == 0 && year % 100 != 0) {
+    //   console.log("Leap Year");
+    // } else if (year % 400 == 0) {
+    //   console.log("Leap Year");
+    // } else {
+    //   console.log("Not a Leap Year");
+    // }
+
+    // if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+    //   console.log("Leap Year");
+    // } else {
+    //   console.log("Not a Leap Year");
+    // }
+
+    // Task-3. Number is Positive Even, Positive Odd, Negative
+
+    // let num = Number(prompt("Enter The Number:--"));
+
+    // if (num > 0) {
+    //   if (num % 2 == 0) {
+    //     console.log("Positive Even Number");
+    //   } else {
+    //     console.log("Positive Odd Number");
+    //   }
+    // } else if (num == 0) {
+    //   console.log("Zero");
+    // } else {
+    //   console.log("Negative Number");
+    // }
+
+    // Task-4. Online Shopping Discount Logic
+
+    // let amount = Number(prompt("Enter The Amount:--"));
+
+    // if (amount > 1000) {
+    //   console.log("20% Discount");
+    // } else if (amount > 500) {
+    //   console.log("10% Discount");
+    // } else {
+    //   console.log("No Discount");
+    // }
+
+    // Task-5. Weather Report by Temperature
+
+    // let weather = Number(prompt("Enter The Weather Temp..."));
+
+    // if (weather > 35) {
+    //   console.log("Very Hot");
+    // } else if (weather <= 35 && weather > 25) {
+    //   console.log("Hot");
+    // } else if (weather <= 25 && weather > 15) {
+    //   console.log("Pleasant");
+    // } else if (weather <= 15 && weather > 5) {
+    //   console.log("Cold");
+    // } else {
+    //   console.log("Very Cold");
+    // }
+
+    // Task-6. ATM Action Menu
+
+    let atmAc = Number(
+      prompt(`
+            ATM Action Menu
+            1 Check Balance
+            2 Withdraw
+            3 Deposit
+            4 Exit
+    `),
+    );
+
+    switch (atmAc) {
+      case 1:
+        console.log("Check Balance");
+        break;
+      case 2:
+        console.log("WithDraw");
+        break;
+      case 3:
+        console.log("Deposit");
+        break;
+      case 4:
+        console.log("Exit");
+        break;
+    }
+  </script>
+</html>
