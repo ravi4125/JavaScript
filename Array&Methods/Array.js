@@ -166,3 +166,39 @@
 
 // let string = color.toString();
 // console.log(string); // red,green,blue,orange
+
+// ======================Array Destructuring======================
+
+// let color = ["red", "green", "blue"];
+
+// let [first, second] = color;
+// console.log(first, second); // red green
+
+// let l = [10, 20, 30, 40];
+// let [, , a] = l;
+// console.log(a); // 30
+
+// let l = [10, 20, 30, 40];
+
+// let [a, ...rest] = l;
+// console.log(a, rest); // 10 [20, 30, 40]
+
+// let l = [1, 2, 3, 4, 5];
+// let m = l; // deep copy
+// console.log(l);
+// console.log(m);
+
+// m.push(6);
+// // After update
+// console.log(l);
+// console.log(m);
+
+// let l = [1, 2, 3, 4, 5];
+// let m = [...l]; // Shallow copy
+// console.log(l);
+// console.log(m);
+
+// m.push(6);
+// // After update
+// console.log(l);
+// console.log(m);
