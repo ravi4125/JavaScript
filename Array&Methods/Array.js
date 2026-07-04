@@ -202,3 +202,150 @@
 // // After update
 // console.log(l);
 // console.log(m);
+
+// ======================Higher Order Functions======================
+
+// 1. map() -> map() is a method that creates a new array by applying a function to every element of an existing array.
+
+// Creates a new array by transforming every element.
+
+// let l = [10, 20, 30, 40];
+
+// l.map((value, index) => {
+//   console.log(value, index); // 10 0, 20 1,....
+// });
+
+// let mapArray = l.map((value, index) => {
+//   return value + 5;
+// });
+// console.log(mapArray); // [15, 25, 35, 45]
+
+// let n = [2, 4, 6, 8];
+
+// let square = (v) => v ** 2;
+
+// let squareArray = n.map(square);
+
+// console.log(squareArray); // [4, 16, 36, 64]
+
+// 2. filter() -> filter() creates a new array containing only the elements that pass a test (return true) from the original array.
+
+// Returns a new array containing only the elements that satisfy a condition.
+
+// let n = [10, 20, 23, 25, 90, 15, 16, 29, 63];
+
+// let filterArray = n.filter((value) => {
+//   if (value % 3 == 0) {
+//     return true;
+//   }
+// });
+// console.log(filterArray); // [90, 15, 63]
+
+// let filterArray = n.filter((value) => value % 3 == 0);
+// console.log(filterArray); // [90, 15, 63]
+
+// let user = [
+//   {
+//     name: "ravi",
+//     age: 21,
+//   },
+//   {
+//     name: "raj",
+//     age: 12,
+//   },
+//   {
+//     name: "sumit",
+//     age: 27,
+//   },
+//   {
+//     name: "om",
+//     age: 21,
+//   },
+//   {
+//     name: "jonal",
+//     age: 16,
+//   },
+// ];
+// console.log(user);
+
+// let filterUser = user.filter((obj) => obj.age >= 18);
+// console.log(filterUser);
+
+// 3. reduce() -> reduce() takes an array and reduces it to a single value by applying a function to each element, carrying an accumulated result forward.
+
+// Reduces the entire array into a single value (sum, product, object, etc.).
+
+// let l = [10, 20, 30, 40];
+
+// let total = l.reduce((sum, value) => sum + value, 0);
+// console.log(total); // 100
+
+// 4. find() -> find() returns the first element in an array that passes a test (returns true). If nothing passes, it returns undefined.
+
+// find() is an Array Higher Order Function that returns the first element that satisfies a condition. If no element matches, it returns undefined.
+
+// let user = [
+//   {
+//     name: "ravi",
+//     age: 21,
+//   },
+//   {
+//     name: "raj",
+//     age: 18,
+//   },
+//   {
+//     name: "sumit",
+//     age: 27,
+//   },
+//   {
+//     name: "om",
+//     age: 21,
+//   },
+//   {
+//     name: "jonal",
+//     age: 18,
+//   },
+// ];
+// console.log(user);
+
+// let findData = user.find((value) => value.age == 18);
+
+// console.log(findData); // {name: 'raj', age: 18}
+
+// let n = [10, 25, 36, 47, 33, 39];
+
+// let oddNumber = n.find((value) => value % 2 != 0);
+// console.log(oddNumber); // 25
+
+// 5. forEach() -> forEach() is a method that executes a function once for each element in an array. It's used for performing actions on array items.
+
+// forEach() is an Array Higher Order Function used to loop through each element of an array.
+
+// Important: forEach() does not return a new array. It is mainly used for performing actions like printing values, updating the DOM, or calling functions.
+
+// let user = [
+//   {
+//     name: "ravi",
+//     age: 21,
+//   },
+//   {
+//     name: "raj",
+//     age: 12,
+//   },
+//   {
+//     name: "sumit",
+//     age: 27,
+//   },
+//   {
+//     name: "om",
+//     age: 21,
+//   },
+//   {
+//     name: "jonal",
+//     age: 16,
+//   },
+// ];
+
+// user.forEach((Obj, index) => {
+//   console.log(index, Obj.name, Obj.age); // 0 'ravi' 21,....
+// });
