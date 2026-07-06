@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif;
+      }
+      .modalDiv {
+        position: fixed;
+        left: 50%;
+        height: 350px;
+        width: 350px;
+        top: -1000px;
+        transition: 0.5s;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 0px 10px 2px #ccc;
+      }
+      .modalDiv h2 {
+        padding: 10px 0px;
+        text-align: center;
+        position: relative;
+        border-bottom: 1px solid #ccc;
+      }
+      .modalDiv h2 span {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Show Modal</button>
+    <div class="modalDiv">
+      <h2>Enquire Now <span>&times;</span></h2>
+      <form action=""></form>
+    </div>
+  </body>
+  <script>
+    let btn = document.querySelector("button");
+    let modalDivElem = document.querySelector(".modalDiv");
+    let closeBtn = document.querySelector(".modalDiv span");
+    btn.addEventListener("click", () => {
+      modalDivElem.style.top = "50%";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modalDivElem.style.top = "-1000px";
+    });
+  </script>
+</html>

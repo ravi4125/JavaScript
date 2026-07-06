@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real -Time Background Color Changer</title>
+    <style></style>
+  </head>
+  <body>
+    <button>Color Chnager</button>
+  </body>
+  <script>
+    // Math.random() // 0 - 1
+
+    // Math.floor(25.2) // 25
+
+    // Math.ceil(25.2) // 26
+
+    let body = document.querySelector("body");
+    let btn = document.querySelector("button");
+
+    btn.addEventListener("click", () => {
+      let redCode = Math.floor(Math.random() * 255); // 0 - 1 = 0.5*255 = 126.5 = 126
+      let greenCode = Math.floor(Math.random() * 255);
+      let blueCode = Math.floor(Math.random() * 255);
+
+      body.style.background = `rgb(${redCode}, ${greenCode}, ${blueCode})`;
+    });
+  </script>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Save</button>
+    <h1>Welcome Boys</h1>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus,
+      omnis.
+    </p>
+  </body>
+  <script>
+    let btn = document.querySelector("button"); //   <button>Save</button>
+    let headingElem = document.querySelector("h1"); // <h1>Welcome Boys</h1>
+    let paraElem = document.querySelector("p"); // <p>Lorem....</p>
+
+    btn.addEventListener("click", () => {
+      headingElemData = headingElem.innerHTML;
+      paraElemData = paraElem.innerHTML;
+
+      headingElem.innerHTML = paraElemData;
+      paraElem.innerHTML = headingElemData;
+    });
+  </script>
+</html>

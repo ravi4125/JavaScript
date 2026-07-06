@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Character Counter</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif;
+        box-sizing: border-box;
+      }
+
+      .main {
+        width: 100%;
+        margin: auto;
+      }
+      .main textarea {
+        width: 100%;
+        height: 200px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <textarea name="" id=""></textarea>
+
+      <h2>Length - <span>0</span></h2>
+      <div id="resDiv"></div>
+    </div>
+  </body>
+  <script>
+    let textareaElem = document.querySelector("textarea");
+    let lenElem = document.querySelector("h2 span");
+    let resDivElem = document.querySelector("#resDiv");
+
+    textareaElem.addEventListener("keyup", () => {
+      resDivElem.innerHTML = textareaElem.value;
+      lenElem.innerHTML = textareaElem.value.length;
+    });
+  </script>
+</html>
