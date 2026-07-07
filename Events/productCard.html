@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event bubbling with stoppropagation</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0;
+      }
+      .productCard {
+        width: 200px;
+        box-shadow: 0px 0px 10px 2px #ccc;
+      }
+
+      .productCard img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="productCard">
+      <img
+        src="https://i.pinimg.com/1200x/cf/0c/4d/cf0c4dfd283c24ee59824136205f8c73.jpg"
+        alt=""
+      />
+      <h2>Building Photo</h2>
+      <button>Add TO cart</button>
+    </div>
+  </body>
+  <script>
+    let productCard = document.querySelector(".productCard");
+    let btn = document.querySelector("button");
+
+    productCard.addEventListener("click", () => {
+      console.log("Product Details");
+    });
+
+    btn.addEventListener("click", (e) => {
+      console.log("Add To Cart");
+      e.stopPropagation();
+    });
+  </script>
+</html>

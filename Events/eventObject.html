@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        width: 1000px;
+        height: 500px;
+        margin: auto;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Welcome</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus optio
+        dolorem ad eum, laudantium praesentium.
+      </p>
+      <button>Read More</button>
+    </div>
+  </body>
+  <script>
+    // let mainElem = document.querySelector(".main");
+
+    // mainElem.addEventListener("click", (e) => {
+    //   //   console.log(e.type); // click
+    //   //   console.log(e.target);
+    //   console.log(e.currentTarget); // mainelement
+    //   console.log(e.clientX);
+    // });
+
+    // Event Delegation
+
+    let mainElem = document.querySelector(".main");
+
+    mainElem.addEventListener("click", (e) => {
+      if (e.target.tagName == "BUTTON") {
+        alert("hello");
+      }
+    });
+  </script>
+</html>

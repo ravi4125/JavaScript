@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image LightBox</title>
+    <style>
+      * {
+        font-family: sans-serif;
+        margin: 0px;
+        padding: 0px;
+      }
+      #productSection {
+        width: 100%;
+        padding: 50px 0px;
+        margin-bottom: 30px;
+      }
+      .main {
+        width: 1320px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      #productSection h1 {
+        text-align: center;
+        font-size: 30px;
+        padding: 20px 0px;
+      }
+
+      .productItems img {
+        width: 100%;
+        height: 250px;
+      }
+
+      .modalElement {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+      }
+
+      .whitemodal {
+        width: 800px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .whitemodal img {
+        width: 100%;
+        height: 500px;
+      }
+
+      .whitemodal span {
+        right: 0px;
+        font-size: 40px;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+      }
+
+      .showModal {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modalElement">
+      <div class="whitemodal">
+        <span>&times;</span>
+        <img
+          src="https://i.pinimg.com/736x/80/4f/b5/804fb5e746919397845ed8d9171cfd86.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+    <section id="productSection">
+      <h1>Products</h1>
+      <div class="main">
+        <div class="productItems">
+          <img
+            src="https://i.pinimg.com/736x/80/4f/b5/804fb5e746919397845ed8d9171cfd86.jpg"
+            alt=""
+          />
+        </div>
+        <div class="productItems">
+          <img
+            src="https://i.pinimg.com/1200x/8a/37/f5/8a37f52669d4a9d04bf723842f12eec4.jpg"
+            alt=""
+          />
+        </div>
+        <div class="productItems">
+          <img
+            src="https://i.pinimg.com/1200x/9f/6c/8f/9f6c8fad5f1d625eac9fddc9f020c0e5.jpg"
+            alt=""
+          />
+        </div>
+        <div class="productItems">
+          <img
+            src="https://i.pinimg.com/1200x/29/1f/b5/291fb59d43e122f2aee5dbb747179ace.jpg"
+            alt=""
+          />
+        </div>
+        <div class="productItems">
+          <img
+            src="https://i.pinimg.com/736x/e5/2d/d8/e52dd8dc6d97e0ee6b4810661b0edd6c.jpg"
+            alt=""
+          />
+        </div>
+        <div class="productItems">
+          <img
+            src="https://i.pinimg.com/1200x/8a/37/f5/8a37f52669d4a9d04bf723842f12eec4.jpg"
+            alt=""
+          />
+        </div>
+        <div class="productItems">
+          <img
+            src="https://i.pinimg.com/1200x/29/1f/b5/291fb59d43e122f2aee5dbb747179ace.jpg"
+            alt=""
+          />
+        </div>
+        <div class="productItems">
+          <img
+            src="https://i.pinimg.com/1200x/9f/6c/8f/9f6c8fad5f1d625eac9fddc9f020c0e5.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    let modalElemDiv = document.querySelector(".modalElement");
+    let mainElem = document.querySelector(".main");
+    let modalImg = document.querySelector(".whitemodal img");
+    let closeBtn = document.querySelector(".whitemodal span");
+
+    mainElem.addEventListener("click", (e) => {
+      if (e.target.tagName == "IMG") {
+        let clickImagePath = e.target.src;
+
+        modalElemDiv.classList.add("showModal");
+
+        modalImg.src = clickImagePath;
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modalElemDiv.classList.remove("showModal");
+      modalImg.src = "";
+    });
+
+    modalElemDiv.addEventListener("click", () => {
+      modalElemDiv.classList.remove("showModal");
+      modalImg.src = "";
+    });
+
+    let whiteModalELem = document.querySelector(".whitemodal");
+
+    whiteModalELem.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  </script>
+</html>
