@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        font-family: sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        padding: 50px 0px;
+      }
+
+      .faqMid {
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .faqItem {
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+
+      .faqMid h3 {
+        background: aqua;
+        padding: 10px;
+        position: relative;
+      }
+
+      .faqMid span {
+        position: absolute;
+        right: 10px;
+      }
+
+      .ans {
+        padding: 10px;
+        display: none;
+      }
+
+      .showAns {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>FAQs About Leicester Taxi Service</h1>
+
+    <div class="faqMid">
+      <div class="faqItem">
+        <h3>
+          1. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          <span>+</span>
+        </h3>
+        <div class="ans">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          deleniti reprehenderit fuga adipisci dicta consequatur!
+        </div>
+      </div>
+      <div class="faqItem">
+        <h3>
+          2. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          <span>+</span>
+        </h3>
+        <div class="ans">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          deleniti reprehenderit fuga adipisci dicta consequatur!
+        </div>
+      </div>
+      <div class="faqItem">
+        <h3>
+          3. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          <span>+</span>
+        </h3>
+        <div class="ans">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          deleniti reprehenderit fuga adipisci dicta consequatur!
+        </div>
+      </div>
+      <div class="faqItem">
+        <h3>
+          4. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          <span>+</span>
+        </h3>
+        <div class="ans">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          deleniti reprehenderit fuga adipisci dicta consequatur!
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let allQues = document.querySelectorAll(".faqItem h3");
+    // console.log(allQues);
+
+    allQues.forEach((question, index) => {
+      //   console.log(question, index);
+      question.addEventListener("click", () => {
+        // console.log(question);
+        question.nextElementSibling.classList.toggle("showAns");
+
+        // CLick Question Logic
+        // console.log(question.lastElementChild);
+        if (question.lastElementChild.innerHTML == "+") {
+          question.lastElementChild.innerHTML = "-";
+        } else {
+          question.lastElementChild.innerHTML = "+";
+        }
+
+        allQues.forEach((q, i) => {
+          //   console.log(q, i, "clicked Index", index);
+
+          if (i != index) {
+            // console.log(q, i, "clicked Index", index);
+            q.lastElementChild.innerHTML = "+";
+            q.nextElementSibling.classList.remove("showAns");
+          }
+        });
+      });
+    });
+  </script>
+</html>
