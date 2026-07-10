@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: sans-serif;
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+  </body>
+  <script>
+    let currentDate = new Date();
+    console.log(currentDate);
+    console.log(currentDate.getFullYear());
+    console.log(currentDate.getMonth());
+    console.log(currentDate.getDate());
+    console.log(currentDate.getDay());
+    console.log(
+      currentDate.getHours() < 12
+        ? currentDate.getHours()
+        : currentDate.getHours() - 12,
+    );
+    console.log(currentDate.getMinutes());
+    console.log(currentDate.getSeconds());
+
+    console.log(currentDate.toLocaleDateString());
+    console.log(currentDate.toLocaleTimeString());
+
+    let h1Elem = document.querySelector("h1");
+
+    let dClock = () => {
+      let currentDate = new Date();
+      h1Elem.innerHTML = currentDate.toLocaleTimeString();
+    };
+    dClock();
+
+    setInterval(dClock, 1000);
+
+    // setInterval(() => {
+    //   let currentDate = new Date();
+    //   h1Elem.innerHTML = currentDate.toLocaleTimeString();
+    // }, 1000);
+  </script>
+</html>
