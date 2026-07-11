@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>white</button>
+    <button>red</button>
+    <button>black</button>
+  </body>
+
+  <script>
+    // localStorage.setItem("userName", "ravi");
+    // console.log(localStorage.getItem("userName")); // ravi
+
+    let bodyElem = document.querySelector("body");
+
+    let allBtns = document.querySelectorAll("button");
+
+    allBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        localStorage.setItem("COLORTHEME", btn.innerHTML.toLowerCase());
+        localStorage.setItem("TIMEX", new Date().toLocaleTimeString());
+        localStorage.setItem("TIME", new Date().toLocaleTimeString());
+        setColotThemeBody();
+      });
+    });
+
+    let setColotThemeBody = () => {
+      let color = localStorage.getItem("COLORTHEME");
+      //   console.log(color);
+      bodyElem.style.background = color;
+    };
+
+    setColotThemeBody();
+
+    // localStorage.removeItem("TIME");
+    // localStorage.clear();
+    // console.log(localStorage.key(2));
+  </script>
+</html>
